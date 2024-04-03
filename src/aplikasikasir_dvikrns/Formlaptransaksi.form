@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -88,10 +88,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="27" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="24" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel1" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="sebelumtanggal" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -141,6 +138,9 @@
       </Properties>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="daritanggal">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="daritanggalMouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="setelahtanggal">
     </Component>
@@ -308,6 +308,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbldataprodukMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -189,6 +189,11 @@ public void tampilWaktu() {
         getContentPane().add(txtjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 6, 94, 30));
 
         txttanggal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txttanggal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txttanggalActionPerformed(evt);
+            }
+        });
         getContentPane().add(txttanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(662, 6, 109, 30));
 
         formlogin.setVisible(true);
@@ -200,6 +205,12 @@ public void tampilWaktu() {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-access-rights-20.png"))); // NOI18N
         jLabel4.setText("Hak Akses");
+
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
 
         btnbatal.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnbatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-register-30 (1).png"))); // NOI18N
@@ -229,6 +240,12 @@ public void tampilWaktu() {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-male-user-20.png"))); // NOI18N
         jLabel2.setText("Username");
+
+        txtpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout formloginLayout = new javax.swing.GroupLayout(formlogin.getContentPane());
         formlogin.getContentPane().setLayout(formloginLayout);
@@ -353,15 +370,9 @@ public void tampilWaktu() {
 
         jMenuBar1.add(transaksi);
 
-        laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-register-30 (1).png"))); // NOI18N
         laporan.setText("Laporan");
-        laporan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                laporanActionPerformed(evt);
-            }
-        });
 
-        jMenuItem1.setText("Recap Laporan");
+        jMenuItem1.setText("Recap laporan");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -506,21 +517,29 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtjamActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
 new Formabout().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_helpActionPerformed
 
-    private void laporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanActionPerformed
-new Formlaptransaksi().setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_laporanActionPerformed
-
     private void tentangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tentangActionPerformed
 new Formabout(). setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_tentangActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+new Formlaptransaksi(). setVisible(true);     // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void txttanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttanggalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttanggalActionPerformed
+
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusernameActionPerformed
+
+    private void txtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpasswordActionPerformed
 
     /**
      * @param args the command line arguments

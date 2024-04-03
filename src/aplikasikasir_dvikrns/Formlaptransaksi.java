@@ -74,6 +74,12 @@ String tanggal, tanggal2,sql;
         jLabel2.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         jLabel2.setText("Diantara Tanggal");
 
+        daritanggal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                daritanggalMouseClicked(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
         jLabel3.setText("Setelah Tanggal");
 
@@ -135,6 +141,11 @@ String tanggal, tanggal2,sql;
                 "DetailID", "PenjualanID", "ProdukID", "JumlahProduk", "Subtotal"
             }
         ));
+        tbldataproduk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbldataprodukMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tbldataproduk);
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
@@ -177,9 +188,7 @@ String tanggal, tanggal2,sql;
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sebelumtanggal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btncari, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +220,7 @@ String tanggal, tanggal2,sql;
 try {
     SimpleDateFormat format = new SimpleDateFormat ("yyyy-MM-dd");
     tanggal = format.format(sebelumtanggal.getDate());
-    sql = "select * form tbl_penjualan where tanggalpenjualan < '"+tanggal+"'";
+    sql = "select * form penjualan where tanggalpenjualan < '"+tanggal+"'";
     pst = konek.prepareStatement(sql);
     rst = pst.executeQuery();
     tbllaptransaksi.setModel(DbUtils.resultSetToTableModel(rst));
@@ -225,7 +234,7 @@ try {
 try {
     int row = tbllaptransaksi.getSelectedRow();
     String tabelKlik = (tbllaptransaksi.getModel().getValueAt(row, 1). toString());
-    String sql = "select * from tbl_detailpenjualan where DetailID=?";
+    String sql = "select * from detailpenjualan where DetailID=?";
     pst = konek.prepareStatement(sql);
     pst.setString(1,tabelKlik);
     tbldataproduk.setModel(DbUtils.resultSetToTableModel(rst));
@@ -239,8 +248,7 @@ try {
 try {
     SimpleDateFormat format = new SimpleDateFormat ("yyyy-MM-dd");
     tanggal = format.format(sebelumtanggal.getDate());
-    tanggal2 = format.format(sampaitanggal.getDate());
-    sql = "select * form tbl_penjualan where tanggalpenjualan < '"+tanggal+"'";
+    sql = "select * form penjualan where tanggalpenjualan < '"+tanggal+"'";
     pst = konek.prepareStatement(sql);
     rst = pst.executeQuery();
     tbllaptransaksi.setModel(DbUtils.resultSetToTableModel(rst));
@@ -252,8 +260,8 @@ try {
     private void btncari3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncari3ActionPerformed
 try {
     SimpleDateFormat format = new SimpleDateFormat ("yyyy-MM-dd");
-    tanggal = format.format(sebelumtanggal.getDate());
-    sql = "select * form tbl_penjualan where tanggalpenjualan < '"+tanggal+"'";
+    tanggal = format.format(setelahtanggal.getDate());
+    sql = "select * form penjualan where tanggalpenjualan > '"+tanggal+"'";
     pst = konek.prepareStatement(sql);
     rst = pst.executeQuery();
     tbllaptransaksi.setModel(DbUtils.resultSetToTableModel(rst));
@@ -261,6 +269,14 @@ try {
     JOptionPane.showMessageDialog(null,"Data tidak tampil");
 }    // TODO add your handling code here:
     }//GEN-LAST:event_btncari3ActionPerformed
+
+    private void tbldataprodukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbldataprodukMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbldataprodukMouseClicked
+
+    private void daritanggalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daritanggalMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_daritanggalMouseClicked
 
     /**
      * @param args the command line arguments

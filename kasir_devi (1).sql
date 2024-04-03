@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Mar 2024 pada 05.32
+-- Waktu pembuatan: 03 Apr 2024 pada 05.06
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `detailpenjualan` (
-  `DetailID` int(11) NOT NULL,
-  `PenjualanID` int(11) NOT NULL,
-  `ProdukID` int(11) NOT NULL,
+  `DetailID` varchar(15) NOT NULL,
+  `ProdukID` varchar(15) NOT NULL,
   `JumlahProduk` int(11) NOT NULL,
-  `Subtotal` decimal(10,2) NOT NULL
+  `Subtotal` int(11) NOT NULL,
+  `Harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `detailpenjualan` (
 --
 
 CREATE TABLE `login` (
-  `LoginID` int(11) NOT NULL,
+  `LoginID` varchar(15) NOT NULL,
   `Username` varchar(255) NOT NULL,
   `Password` varchar(225) NOT NULL,
   `HakAkses` varchar(50) NOT NULL
@@ -53,7 +53,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`LoginID`, `Username`, `Password`, `HakAkses`) VALUES
-(0, 'Devi', '123', 'Admin');
+('0', 'Devi', '123', 'Admin'),
+('12345', 'devik', '1234', '-Admin');
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,9 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`PelangganID`, `NamaPelanggan`, `Alamat`, `NomorTelepon`) VALUES
-('223344', 'Risma', 'Cimek', '0828774637');
+('223344', 'Risma', 'Cimek', '0828774637'),
+('3231', 'Ratma', 'Leuwianyar', '0845638'),
+('34526', 'samsul', 'cireong', '087656486');
 
 -- --------------------------------------------------------
 
@@ -82,11 +85,11 @@ INSERT INTO `pelanggan` (`PelangganID`, `NamaPelanggan`, `Alamat`, `NomorTelepon
 --
 
 CREATE TABLE `penjualan` (
-  `PenjualanID` int(11) NOT NULL,
-  `TanggalPenjualan` date NOT NULL,
-  `TotalHarga` decimal(10,2) NOT NULL,
+  `PenjualanID` varchar(15) NOT NULL,
   `DetailID` varchar(15) NOT NULL,
-  `JamPenjualan` time NOT NULL
+  `TanggalPenjualan` date NOT NULL,
+  `JamPenjualan` time NOT NULL,
+  `TotalHarga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -96,9 +99,9 @@ CREATE TABLE `penjualan` (
 --
 
 CREATE TABLE `produk` (
-  `ProdukID` int(11) NOT NULL,
+  `ProdukID` varchar(15) NOT NULL,
   `NamaProduk` varchar(255) NOT NULL,
-  `Harga` decimal(10,2) NOT NULL,
+  `Harga` int(11) NOT NULL,
   `Stok` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -107,7 +110,9 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`ProdukID`, `NamaProduk`, `Harga`, `Stok`) VALUES
-(44251, 'Baju', 70.00, 200);
+('11234', 'Mie goreng', 3500, 100),
+('12345', 'Roti Aoka\r\n', 2500, 90),
+('54321', 'Susu Dancow', 4000, 70);
 
 --
 -- Indexes for dumped tables

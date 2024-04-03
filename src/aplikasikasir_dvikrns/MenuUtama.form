@@ -87,18 +87,12 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="laporan">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/image/icons8-register-30 (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Laporan"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="laporanActionPerformed"/>
-          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Recap Laporan"/>
+                <Property name="text" type="java.lang.String" value="Recap laporan"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
@@ -307,6 +301,9 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txttanggalActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="662" y="6" width="109" height="30"/>
@@ -414,6 +411,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtusername">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtusernameActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnbatal">
           <Properties>
@@ -484,6 +484,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="txtpassword">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtpasswordActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

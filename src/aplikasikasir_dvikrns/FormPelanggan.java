@@ -130,6 +130,30 @@ private void simpan() {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-stock-20.png"))); // NOI18N
         jLabel5.setText("No.Telpon");
 
+        txtidpelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidpelangganActionPerformed(evt);
+            }
+        });
+
+        txtnamapelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnamapelangganActionPerformed(evt);
+            }
+        });
+
+        txtalamat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtalamatActionPerformed(evt);
+            }
+        });
+
+        txtnotelpon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnotelponActionPerformed(evt);
+            }
+        });
+
         tblpelanggan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -248,15 +272,12 @@ private void simpan() {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(txtalamat, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtnotelpon, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnkaluar)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(txtnotelpon, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnkaluar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 37, Short.MAX_VALUE))
@@ -329,6 +350,22 @@ mulai();        // TODO add your handling code here:
     private void btnkaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkaluarActionPerformed
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnkaluarActionPerformed
+
+    private void txtidpelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidpelangganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidpelangganActionPerformed
+
+    private void txtnamapelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnamapelangganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnamapelangganActionPerformed
+
+    private void txtalamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtalamatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtalamatActionPerformed
+
+    private void txtnotelponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnotelponActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnotelponActionPerformed
 
     /**
      * @param args the command line arguments
